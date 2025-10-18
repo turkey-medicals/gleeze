@@ -6,18 +6,24 @@
   <title>Turkey Medical Tourism | Premium Treatments & Clinics — Rich Mocha Theme</title>
   <meta name="description" content="Experience world-class medical tourism in Turkey: hair transplants, dental care, bariatric and orthopedic surgeries at trusted clinics. Contact patient@turkeymedicals.com." />
   <meta name="keywords" content="medical tourism Turkey, hair transplant Istanbul, dental tourism Turkey, bariatric surgery Antalya, Turkey health travel, TurkeyMedicals" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-  <style>
-    /* Rich Mocha gradient animation */
-    :root {
-      --mocha-1: #0f0a09;
-      --mocha-2: #2d1f1a;
-      --mocha-3: #5c4033;
-      --amber: rgba(255,191,73,1);
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mocha1: '#0f0a09',
+            mocha2: '#2d1f1a',
+            mocha3: '#5c4033',
+            amberGlow: '#FFBF49'
+          }
+        }
+      }
     }
+  </script>
+  <style>
     .hero-gradient {
-      background: linear-gradient(135deg, var(--mocha-1), var(--mocha-2) 40%, var(--mocha-3) 75%);
+      background: linear-gradient(135deg, #0f0a09, #2d1f1a 40%, #5c4033 75%);
       background-size: 300% 300%;
       animation: mochaShift 12s ease infinite;
     }
@@ -26,7 +32,6 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     .card-glow {
       transition: box-shadow 0.35s ease, transform 0.25s ease;
       box-shadow: 0 4px 18px rgba(0,0,0,0.6);
@@ -35,55 +40,63 @@
       transform: translateY(-6px);
       box-shadow: 0 14px 40px rgba(91,46,18,0.35), 0 0 40px rgba(255,191,73,0.08);
     }
-
-    /* small helper for hiding default scrollbars on horizontal lists */
-    .scrollbar-hide::-webkit-scrollbar { display: none; }
-    .scrollbar-hide { -ms-overflow-style:none; scrollbar-width:none; }
-
-    /* responsive iframe */
     .video-frame { width:100%; height:100%; border:0; }
   </style>
 </head>
-
 <body class="bg-gradient-to-b from-black via-[#1b1311] to-[#100806] text-white font-sans leading-relaxed">
 
-  <!-- HEADER (non-sticky) -->
-  <header class="w-full bg-black/80">
+  <!-- HEADER -->
+  <header class="w-full bg-black/80 fixed top-0 left-0 z-50">
     <div class="container mx-auto flex items-center justify-between p-5">
-      <a href="/" class="text-2xl font-bold text-amber-400 tracking-wide">TurkeyMedicals — MedHelp</a>
+      <a href="/" class="text-2xl font-bold text-amberGlow tracking-wide">TurkeyMedicals — MedHelp</a>
       <nav class="hidden md:flex space-x-6 text-sm">
-        <a href="#services" class="hover:text-amber-300 transition">Services</a>
-        <a href="#videos" class="hover:text-amber-300 transition">Videos</a>
-        <a href="#articles" class="hover:text-amber-300 transition">Articles</a>
-        <a href="#consultation" class="hover:text-amber-300 transition">Contact</a>
+        <a href="#services" class="hover:text-amberGlow transition">Services</a>
+        <a href="#videos" class="hover:text-amberGlow transition">Videos</a>
+        <a href="#articles" class="hover:text-amberGlow transition">Articles</a>
+        <a href="#consultation" class="hover:text-amberGlow transition">Contact</a>
       </nav>
-      <div class="flex items-center space-x-3">
-        <a href="mailto:patient@turkeymedicals.com" class="text-sm text-gray-300 hover:text-amber-300">patient@turkeymedicals.com</a>
-        <a href="https://wa.me/905071636297" class="text-sm text-green-400 hover:text-amber-300">WhatsApp</a>
-        <a href="#consultation" class="ml-3 bg-amber-400 text-black px-4 py-2 rounded-lg font-semibold hover:opacity-95 transition">Free Consultation</a>
+      <div class="flex items-center space-x-3 md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-6 h-6 text-amberGlow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"/>
+          </svg>
+        </button>
+      </div>
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="mailto:patient@turkeymedicals.com" class="text-sm text-gray-300 hover:text-amberGlow">patient@turkeymedicals.com</a>
+        <a href="https://wa.me/905071636297" class="text-sm text-green-400 hover:text-amberGlow">WhatsApp</a>
+        <a href="#consultation" class="ml-3 bg-amberGlow text-black px-4 py-2 rounded-lg font-semibold hover:opacity-95 transition">Free Consultation</a>
       </div>
     </div>
+    <nav id="mobile-menu" class="hidden bg-black/90 text-center py-4 md:hidden">
+      <a href="#services" class="block py-2 hover:text-amberGlow transition">Services</a>
+      <a href="#videos" class="block py-2 hover:text-amberGlow transition">Videos</a>
+      <a href="#articles" class="block py-2 hover:text-amberGlow transition">Articles</a>
+      <a href="#consultation" class="block py-2 hover:text-amberGlow transition">Contact</a>
+    </nav>
   </header>
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+  </script>
 
   <!-- HERO -->
-  <section class="hero-gradient text-center py-32">
+  <section class="hero-gradient text-center py-36 md:py-48 relative">
     <div class="container mx-auto px-6">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-amber-300 drop-shadow-[0_6px_20px_rgba(0,0,0,0.6)]">
-        Discover <span class="text-white bg-[rgba(92,64,51,0.12)] px-4 py-1 rounded-xl">World-Class Medical Tourism in Turkey</span>
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-amberGlow drop-shadow-lg">
+        Discover <span class="text-white bg-[rgba(92,64,51,0.25)] px-4 py-1 rounded-xl">World-Class Medical Tourism in Turkey</span>
       </h1>
-
       <p class="text-lg md:text-xl max-w-3xl mx-auto mb-4 text-gray-200">
-        From advanced <span class="text-amber-200 font-semibold">hair transplants</span> 💇‍♂️ and <span class="text-amber-200 font-semibold">dental aesthetics</span> 😁 to life-changing
-        <span class="text-amber-200 font-semibold">bariatric & orthopedic surgery</span> 🏥 — Turkey blends top medical expertise with exceptional value.
+        From advanced <span class="text-amberGlow font-semibold">hair transplants</span> 💇‍♂️ and <span class="text-amberGlow font-semibold">dental aesthetics</span> 😁 to life-changing
+        <span class="text-amberGlow font-semibold">bariatric & orthopedic surgery</span> 🏥 — Turkey blends top medical expertise with exceptional value.
       </p>
-
       <p class="max-w-2xl mx-auto text-gray-300 mb-8">
-        Trusted clinics in Istanbul, Antalya and across Turkey welcome international patients with tailored packages — medical planning, VIP transfers, recovery stays and world-class care. Your health journey begins here. 💖
+        Trusted clinics in Istanbul, Antalya and across Turkey welcome international patients with tailored packages — medical planning, VIP transfers, recovery stays and world-class care.
       </p>
-
       <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-        <a href="#services" class="bg-[#3b2f2a] text-amber-300 px-6 py-3 rounded-lg font-bold hover:bg-amber-400 hover:text-black transition card-glow">Explore Treatments</a>
-        <a href="#videos" class="bg-transparent border border-amber-600 text-amber-200 px-6 py-3 rounded-lg font-semibold hover:bg-amber-500/10 transition">Watch Patient Stories</a>
+        <a href="#services" class="bg-[#3b2f2a] text-amberGlow px-6 py-3 rounded-lg font-bold hover:bg-amberGlow hover:text-black transition card-glow">Explore Treatments</a>
+        <a href="#videos" class="bg-transparent border border-amberGlow text-amberGlow px-6 py-3 rounded-lg font-semibold hover:bg-amberGlow/10 transition">Watch Patient Stories</a>
       </div>
     </div>
   </section>
@@ -91,84 +104,61 @@
   <!-- SERVICES -->
   <section id="services" class="py-20 bg-gradient-to-b from-[#100806] via-[#1a120f] to-[#0b0605]">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-10 text-amber-300">Top Medical Tourism Services</h2>
+      <h2 class="text-4xl font-bold mb-10 text-amberGlow">Top Medical Tourism Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
-
-        <!-- Dental -->
         <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
           <img src="https://cdn-icons-png.flaticon.com/512/2942/2942927.png" alt="Dental Icon" class="w-20 h-20 mx-auto mb-4">
-          <h3 class="text-2xl font-semibold mb-2 text-amber-200">Dental Tourism</h3>
-          <p class="text-gray-300 mb-4">Veneers, implants, crowns — smile design by experienced Turkish dentists.</p>
-          <a href="https://turkeymedicals.com/dentist-health-tourism" class="text-amber-300 font-semibold hover:underline">Learn More →</a>
+          <h3 class="text-2xl font-semibold mb-2 text-amberGlow">Dental Tourism</h3>
+          <p class="text-gray-200 mb-4">Veneers, implants, crowns — smile design by experienced Turkish dentists.</p>
+          <a href="#" class="text-amberGlow font-semibold hover:underline">Learn More →</a>
         </div>
-
-        <!-- Hair -->
         <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
           <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Hair Icon" class="w-20 h-20 mx-auto mb-4">
-          <h3 class="text-2xl font-semibold mb-2 text-amber-200">Hair Transplant</h3>
-          <p class="text-gray-300 mb-4">FUE & DHI procedures in leading Istanbul & Antalya clinics.</p>
-          <a href="https://turkeymedicals.com/hair-transplant-turkey" class="text-amber-300 font-semibold hover:underline">Learn More →</a>
+          <h3 class="text-2xl font-semibold mb-2 text-amberGlow">Hair Transplant</h3>
+          <p class="text-gray-200 mb-4">FUE & DHI procedures in leading Istanbul & Antalya clinics.</p>
+          <a href="#" class="text-amberGlow font-semibold hover:underline">Learn More →</a>
         </div>
-
-        <!-- Bariatric -->
         <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
           <img src="https://cdn-icons-png.flaticon.com/512/2784/2784452.png" alt="Bariatric Icon" class="w-20 h-20 mx-auto mb-4">
-          <h3 class="text-2xl font-semibold mb-2 text-amber-200">Bariatric Surgery</h3>
-          <p class="text-gray-300 mb-4">Gastric sleeve, bypass and advanced weight-loss programs with full aftercare.</p>
-          <a href="https://turkeymedicals.com/bariatric-surgery" class="text-amber-300 font-semibold hover:underline">Learn More →</a>
+          <h3 class="text-2xl font-semibold mb-2 text-amberGlow">Bariatric Surgery</h3>
+          <p class="text-gray-200 mb-4">Gastric sleeve, bypass and advanced weight-loss programs with full aftercare.</p>
+          <a href="#" class="text-amberGlow font-semibold hover:underline">Learn More →</a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- VIDEO SECTION (4 boxes) -->
-  <section id="videos" class="py-20 bg-gradient-to-b from-[#0b0605] via-[#1a120f] to-[#110806] text-center">
+  <!-- VIDEO TESTIMONIALS -->
+  <section id="videos" class="py-20 bg-[#0b0605] text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-6 text-amber-300">🎬 Patient Stories & Video Testimonials</h2>
-      <p class="text-gray-300 mb-8 max-w-3xl mx-auto">Real patients share their treatment journey: before → after → recovery. Short, candid and helpful for planning your trip.</p>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
-          <div style="position:relative;padding-top:56.25%;">
-            <iframe class="video-frame" src="https://drive.google.com/file/d/1YbZO-yl02kIbIfBSNdE-roamL2WIwphL/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
-          </div>
+      <h2 class="text-4xl font-bold mb-6 text-amberGlow">🎬 Patient Stories & Video Testimonials</h2>
+      <p class="text-gray-300 mb-8 max-w-3xl mx-auto">Real patients share their treatment journey: before → after → recovery. Short, authentic, and reassuring.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#221712] rounded-2xl overflow-hidden card-glow aspect-video">
+          <iframe class="video-frame" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Patient Story 1" allowfullscreen></iframe>
         </div>
-
-        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
-          <div style="position:relative;padding-top:56.25%;">
-            <iframe class="video-frame" src="https://drive.google.com/file/d/1TBEQYMwJUr9fqVAAHMCM9Gzr1ksv2mD6/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
-          </div>
+        <div class="bg-[#221712] rounded-2xl overflow-hidden card-glow aspect-video">
+          <iframe class="video-frame" src="https://www.youtube.com/embed/9bZkp7q19f0" title="Patient Story 2" allowfullscreen></iframe>
         </div>
-
-        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
-          <div style="position:relative;padding-top:56.25%;">
-            <iframe class="video-frame" src="https://drive.google.com/file/d/1BuyqFWjUxh6DujI6lyiyJC05DdLP9ehS/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
-          </div>
+        <div class="bg-[#221712] rounded-2xl overflow-hidden card-glow aspect-video">
+          <iframe class="video-frame" src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Patient Story 3" allowfullscreen></iframe>
         </div>
-
-        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
-          <div style="position:relative;padding-top:56.25%;">
-            <iframe class="video-frame" src="https://drive.google.com/file/d/1Cn95ILutaG2dEFEmYp6Sm929B2nBUNtj/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-8 text-gray-300">
-        <p>📧 <a href="mailto:patient@turkeymedicals.com" class="text-amber-300 hover:underline">patient@turkeymedicals.com</a> &nbsp; | &nbsp; 💬 <a href="https://wa.me/905071636297" class="text-amber-300 hover:underline">+90 507 163 6297</a></p>
       </div>
     </div>
   </section>
 
-  <!-- ARTICLES (full list) -->
-  <section id="articles" class="py-24 bg-[rgba(92,64,51,0.12)] text-center">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-6 text-amber-300">🩺 Medical Tourism Articles & Insights</h2>
-      <p class="text-gray-300 mb-10 max-w-3xl mx-auto">Explore expert guides and patient resources covering treatments, clinics, reimbursement, and travel tips for Turkey medical tourism.</p>
+  <!-- HEALTH TOURISM ARTICLES SECTION -->
+<section id="health-tourism-articles" class="py-20 bg-gradient-to-b from-[#0b0605] via-[#1a120f] to-[#100806]">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-10 text-amberGlow">🌍 Health & Medical Tourism Articles</h2>
+    <div class="grid md:grid-cols-3 gap-8">
 
-      <div class="grid md:grid-cols-3 gap-6 text-left">
-        <!-- Full article list (copied + restyled) -->
-        <a href="https://turkeymedicals.com/inflammation" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+      <a href="https://turkeymedicals.com/inflammation" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow text-left">
+        <h3 class="font-semibold text-xl mb-2 text-amber-200">Inflammation & Health Tourism</h3>
+        <p class="text-sm text-gray-300">Learn how inflammation impacts recovery and treatment planning in Turkey.</p>
+      </a>
+
+  <a href="https://turkeymedicals.com/inflammation" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
           <h3 class="font-semibold text-xl mb-2 text-amber-200">Inflammation & Health Tourism</h3>
           <p class="text-sm text-gray-300">Learn how inflammation impacts recovery and treatment planning in Turkey.</p>
         </a>
@@ -433,51 +423,63 @@
           <p class="text-sm text-gray-300">The connection between inflammation and international treatment travel.</p>
         </a>
 
-      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- TESTIMONIALS -->
-  <section class="py-20 bg-[#0b0604]">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8 text-amber-300">What Our Patients Say</h2>
+  <section class="py-20 bg-[#100806] text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-10 text-amberGlow">💬 Patient Testimonials</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-2xl bg-[#241613] border border-[#3b2520] card-glow">
-          <p class="text-gray-300 italic mb-4">“My dental implant in Antalya was flawless. Clinic staff were incredibly supportive and professional.”</p>
-          <span class="font-semibold text-amber-200">— Sarah M., UK</span>
+        <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
+          <p class="text-gray-200 mb-4">"I had a hair transplant in Istanbul and couldn’t be happier. Professional staff, smooth process, and excellent aftercare!"</p>
+          <span class="text-amberGlow font-semibold">– Alex P., USA</span>
         </div>
-        <div class="p-8 rounded-2xl bg-[#241613] border border-[#3b2520] card-glow">
-          <p class="text-gray-300 italic mb-4">“Hair transplant results exceeded expectations — natural and painless recovery.”</p>
-          <span class="font-semibold text-amber-200">— Ahmed K., UAE</span>
+        <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
+          <p class="text-gray-200 mb-4">"Dental implants were painless and affordable. The clinic treated me like family. Highly recommended!"</p>
+          <span class="text-amberGlow font-semibold">– Maria R., UK</span>
         </div>
-        <div class="p-8 rounded-2xl bg-[#241613] border border-[#3b2520] card-glow">
-          <p class="text-gray-300 italic mb-4">“Full-service care from consultation to recovery — highly recommended.”</p>
-          <span class="font-semibold text-amber-200">— Laura G., Ireland</span>
+        <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
+          <p class="text-gray-200 mb-4">"Bariatric surgery changed my life. Great facilities, clear instructions, and continuous support."</p>
+          <span class="text-amberGlow font-semibold">– Ahmed T., UAE</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA / CONSULTATION -->
-  <section id="consultation" class="py-20 bg-gradient-to-b from-[#110806] via-[#2b1a16] to-[#0b0604] text-center">
+  <!-- CTA / CONTACT -->
+  <section id="consultation" class="py-20 bg-gradient-to-b from-[#221712] to-[#3b2f2a] text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-4 text-amber-300">Start Your Medical Journey to Turkey ✈️💖</h2>
-      <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Contact our healthcare advisors to plan your treatment, hospital stay and travel package. We handle bookings, hospital coordination, and recovery arrangements.</p>
-
-      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-        <a href="mailto:patient@turkeymedicals.com" class="bg-amber-400 text-black px-6 py-3 rounded-lg font-semibold hover:opacity-95 transition">Email Us</a>
-        <a href="https://wa.me/905071636297" class="bg-transparent border border-amber-500 text-amber-200 px-6 py-3 rounded-lg hover:bg-amber-500/10 transition">Chat on WhatsApp</a>
-      </div>
-
-      <p class="mt-6 text-gray-400 text-sm">Or call: <span class="text-amber-300 font-semibold">+90 507 163 6297</span></p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-amberGlow">📩 Free Consultation</h2>
+      <p class="text-gray-200 mb-8 max-w-2xl mx-auto">Reach out today to plan your medical journey to Turkey — tailored treatments, VIP transfers, and 24/7 support included.</p>
+      <a href="mailto:patient@turkeymedicals.com" class="bg-amberGlow text-black px-8 py-4 rounded-lg font-bold hover:opacity-95 transition card-glow">Contact Us Now</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#060302] py-8">
-    <div class="container mx-auto px-6 text-center text-gray-400">
-      <p class="text-sm">© <span class="text-amber-300 font-semibold">TurkeyMedicals</span> 2025. All Rights Reserved.</p>
-      <p class="mt-2 text-xs">Made with ❤️ in Istanbul • <a href="https://turkeymedicals.com/health-tourism" class="text-amber-300 hover:underline">Learn more</a></p>
+  <footer class="bg-[#0b0605] text-gray-400 py-10 mt-10">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-6 text-center md:text-left">
+      <div>
+        <h3 class="text-amberGlow font-bold mb-3">TurkeyMedicals</h3>
+        <p>Premium medical tourism services in Turkey — hair transplants, dental, bariatric, orthopedic surgeries.</p>
+      </div>
+      <div>
+        <h3 class="text-amberGlow font-bold mb-3">Quick Links</h3>
+        <ul>
+          <li><a href="#services" class="hover:text-amberGlow transition">Services</a></li>
+          <li><a href="#videos" class="hover:text-amberGlow transition">Videos</a></li>
+          <li><a href="#articles" class="hover:text-amberGlow transition">Articles</a></li>
+          <li><a href="#consultation" class="hover:text-amberGlow transition">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-amberGlow font-bold mb-3">Contact</h3>
+        <p>Email: <a href="mailto:patient@turkeymedicals.com" class="hover:text-amberGlow transition">patient@turkeymedicals.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/905071636297" class="hover:text-amberGlow transition">+90 507 163 6297</a></p>
+        <p class="mt-4 text-sm">&copy; 2025 TurkeyMedicals. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
