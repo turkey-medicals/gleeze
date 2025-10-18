@@ -1,434 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turkey Medical Tourism | Affordable World-Class Treatments & Clinics 🌍✈️</title>
-  <meta name="description" content="Discover top medical tourism destinations in Turkey. Hair transplants, dental care, bariatric surgery, and more with expert clinics at affordable prices. Contact patient@turkeymedicals.com.">
-  <meta name="keywords" content="Turkey medical tourism, hair transplant Turkey, dental tourism Turkey, bariatric surgery Turkey, Istanbul hospitals, Antalya clinics, health travel, medical treatments abroad">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Turkey Medical Tourism | Premium Treatments & Clinics — Rich Mocha Theme</title>
+  <meta name="description" content="Experience world-class medical tourism in Turkey: hair transplants, dental care, bariatric and orthopedic surgeries at trusted clinics. Contact patient@turkeymedicals.com." />
+  <meta name="keywords" content="medical tourism Turkey, hair transplant Istanbul, dental tourism Turkey, bariatric surgery Antalya, Turkey health travel, TurkeyMedicals" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
-    .gradient-bg {
-      background: linear-gradient(135deg, #fcd34d, #f472b6, #3b82f6);
-      background-size: 600% 600%;
-      animation: gradientAnimation 10s ease infinite;
+    /* Rich Mocha gradient animation */
+    :root {
+      --mocha-1: #0f0a09;
+      --mocha-2: #2d1f1a;
+      --mocha-3: #5c4033;
+      --amber: rgba(255,191,73,1);
     }
-    @keyframes gradientAnimation {
+    .hero-gradient {
+      background: linear-gradient(135deg, var(--mocha-1), var(--mocha-2) 40%, var(--mocha-3) 75%);
+      background-size: 300% 300%;
+      animation: mochaShift 12s ease infinite;
+    }
+    @keyframes mochaShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
+    .card-glow {
+      transition: box-shadow 0.35s ease, transform 0.25s ease;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+    }
+    .card-glow:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 40px rgba(91,46,18,0.35), 0 0 40px rgba(255,191,73,0.08);
+    }
+
+    /* small helper for hiding default scrollbars on horizontal lists */
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style:none; scrollbar-width:none; }
+
+    /* responsive iframe */
+    .video-frame { width:100%; height:100%; border:0; }
   </style>
 </head>
 
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gradient-to-b from-black via-[#1b1311] to-[#100806] text-white font-sans leading-relaxed">
 
-  <!-- Header -->
-  <header class="fixed w-full z-50 bg-gray-900 bg-opacity-80 backdrop-blur-md shadow-lg">
-    <div class="container mx-auto flex items-center justify-between p-4">
-      <a href="/" class="text-2xl font-bold text-yellow-400">TurkeyMedicals - MedHelp</a>
-      <nav class="space-x-6 hidden md:flex">
-        <a href="#services" class="hover:text-yellow-400">Services</a>
-        <a href="#articles" class="hover:text-yellow-400">Articles</a>
-        <a href="#contact" class="hover:text-yellow-400">Contact</a>
+  <!-- HEADER (non-sticky) -->
+  <header class="w-full bg-black/80">
+    <div class="container mx-auto flex items-center justify-between p-5">
+      <a href="/" class="text-2xl font-bold text-amber-400 tracking-wide">TurkeyMedicals — MedHelp</a>
+      <nav class="hidden md:flex space-x-6 text-sm">
+        <a href="#services" class="hover:text-amber-300 transition">Services</a>
+        <a href="#videos" class="hover:text-amber-300 transition">Videos</a>
+        <a href="#articles" class="hover:text-amber-300 transition">Articles</a>
+        <a href="#consultation" class="hover:text-amber-300 transition">Contact</a>
       </nav>
-      <a href="https://drive.google.com/drive/folders/1bdBYEvQfbDufh0hlpHJKyRBDyYTo8PgR" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300">Patient Testimonial Videos</a>
+      <div class="flex items-center space-x-3">
+        <a href="mailto:patient@turkeymedicals.com" class="text-sm text-gray-300 hover:text-amber-300">patient@turkeymedicals.com</a>
+        <a href="https://wa.me/905071636297" class="text-sm text-green-400 hover:text-amber-300">WhatsApp</a>
+        <a href="#consultation" class="ml-3 bg-amber-400 text-black px-4 py-2 rounded-lg font-semibold hover:opacity-95 transition">Free Consultation</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="gradient-bg text-center py-32 mt-16">
+  <!-- HERO -->
+  <section class="hero-gradient text-center py-32">
     <div class="container mx-auto px-6">
-      <h1 class="text-5xl font-extrabold mb-6 leading-tight">
-        World-Class <span class="text-gray-900 bg-yellow-300 px-2 rounded-lg">Medical Tourism in Turkey 🌍✈️</span>
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-amber-300 drop-shadow-[0_6px_20px_rgba(0,0,0,0.6)]">
+        Discover <span class="text-white bg-[rgba(92,64,51,0.12)] px-4 py-1 rounded-xl">World-Class Medical Tourism in Turkey</span>
       </h1>
-      <p class="text-lg max-w-3xl mx-auto mb-6 text-gray-100">
-        From advanced hair transplants 💇‍♂️ and dental aesthetics 😁 to bariatric and orthopedic surgery 🏥 — Turkey leads the world in affordable, high-quality medical tourism.
+
+      <p class="text-lg md:text-xl max-w-3xl mx-auto mb-4 text-gray-200">
+        From advanced <span class="text-amber-200 font-semibold">hair transplants</span> 💇‍♂️ and <span class="text-amber-200 font-semibold">dental aesthetics</span> 😁 to life-changing
+        <span class="text-amber-200 font-semibold">bariatric & orthopedic surgery</span> 🏥 — Turkey blends top medical expertise with exceptional value.
       </p>
-      <p class="text-lg max-w-3xl mx-auto mb-8 text-gray-100">
-        Join thousands of patients from Europe, the Middle East, and beyond who trust Turkey for safe, professional, and life-changing treatments. Your health journey starts here! 💖
+
+      <p class="max-w-2xl mx-auto text-gray-300 mb-8">
+        Trusted clinics in Istanbul, Antalya and across Turkey welcome international patients with tailored packages — medical planning, VIP transfers, recovery stays and world-class care. Your health journey begins here. 💖
       </p>
-      <a href="https://veneers.accesscam.org" class="bg-gray-900 text-yellow-300 px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 hover:text-gray-900 transition duration-300">Explore Dental Treatments</a>
+
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <a href="#services" class="bg-[#3b2f2a] text-amber-300 px-6 py-3 rounded-lg font-bold hover:bg-amber-400 hover:text-black transition card-glow">Explore Treatments</a>
+        <a href="#videos" class="bg-transparent border border-amber-600 text-amber-200 px-6 py-3 rounded-lg font-semibold hover:bg-amber-500/10 transition">Watch Patient Stories</a>
+      </div>
     </div>
   </section>
 
-  <!-- Services Section with Icons -->
-  <section id="services" class="py-24 bg-gray-950">
+  <!-- SERVICES -->
+  <section id="services" class="py-20 bg-gradient-to-b from-[#100806] via-[#1a120f] to-[#0b0605]">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-12 text-yellow-400">Top Medical Tourism Services 🏥</h2>
-      <div class="grid md:grid-cols-3 gap-10">
+      <h2 class="text-4xl font-bold mb-10 text-amber-300">Top Medical Tourism Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
 
         <!-- Dental -->
-        <div class="p-6 bg-gray-800 rounded-2xl shadow-lg hover:shadow-yellow-400/50 transition flex flex-col items-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/2942/2942927.png" alt="Dental Icon" class="w-20 h-20 mb-4">
-          <h3 class="text-2xl font-semibold mb-2 text-yellow-300">Dental Tourism</h3>
-          <p class="text-gray-300 mb-4">Get Hollywood smiles with veneers, implants, and crowns by Turkey’s expert dentists.</p>
-          <a href="https://turkeymedicals.com/dentist-health-tourism" class="text-yellow-400 hover:underline font-semibold">Learn More →</a>
+        <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
+          <img src="https://cdn-icons-png.flaticon.com/512/2942/2942927.png" alt="Dental Icon" class="w-20 h-20 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2 text-amber-200">Dental Tourism</h3>
+          <p class="text-gray-300 mb-4">Veneers, implants, crowns — smile design by experienced Turkish dentists.</p>
+          <a href="https://turkeymedicals.com/dentist-health-tourism" class="text-amber-300 font-semibold hover:underline">Learn More →</a>
         </div>
 
         <!-- Hair -->
-        <div class="p-6 bg-gray-800 rounded-2xl shadow-lg hover:shadow-pink-400/50 transition flex flex-col items-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Hair Icon" class="w-20 h-20 mb-4">
-          <h3 class="text-2xl font-semibold mb-2 text-pink-300">Hair Transplant</h3>
-          <p class="text-gray-300 mb-4">FUE & DHI hair transplants at world-class clinics in Istanbul and Antalya.</p>
-          <a href="https://turkeymedicals.com/hair-transplant-turkey" class="text-pink-400 hover:underline font-semibold">Learn More →</a>
+        <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
+          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Hair Icon" class="w-20 h-20 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2 text-amber-200">Hair Transplant</h3>
+          <p class="text-gray-300 mb-4">FUE & DHI procedures in leading Istanbul & Antalya clinics.</p>
+          <a href="https://turkeymedicals.com/hair-transplant-turkey" class="text-amber-300 font-semibold hover:underline">Learn More →</a>
         </div>
 
         <!-- Bariatric -->
-        <div class="p-6 bg-gray-800 rounded-2xl shadow-lg hover:shadow-blue-400/50 transition flex flex-col items-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/2784/2784452.png" alt="Bariatric Icon" class="w-20 h-20 mb-4">
-          <h3 class="text-2xl font-semibold mb-2 text-blue-300">Bariatric Surgery</h3>
-          <p class="text-gray-300 mb-4">Transform your life with obesity and gastric sleeve surgeries in top Turkish hospitals.</p>
-          <a href="https://turkeymedicals.com/bariatric-surgery" class="text-blue-400 hover:underline font-semibold">Learn More →</a>
+        <div class="p-6 rounded-2xl bg-[#221712] border border-[#3f2b24] card-glow">
+          <img src="https://cdn-icons-png.flaticon.com/512/2784/2784452.png" alt="Bariatric Icon" class="w-20 h-20 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2 text-amber-200">Bariatric Surgery</h3>
+          <p class="text-gray-300 mb-4">Gastric sleeve, bypass and advanced weight-loss programs with full aftercare.</p>
+          <a href="https://turkeymedicals.com/bariatric-surgery" class="text-amber-300 font-semibold hover:underline">Learn More →</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Video Section -->
-<section id="videos" class="py-24 bg-gray-900 text-center">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold mb-10 text-yellow-400">🎬 Patient Stories & Video Testimonials</h2>
-    <p class="text-gray-300 mb-12 max-w-3xl mx-auto">
-      Watch real patients share their experiences with hair transplants, dental treatments, and surgeries in Turkey.
-    </p>
+  <!-- VIDEO SECTION (4 boxes) -->
+  <section id="videos" class="py-20 bg-gradient-to-b from-[#0b0605] via-[#1a120f] to-[#110806] text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-6 text-amber-300">🎬 Patient Stories & Video Testimonials</h2>
+      <p class="text-gray-300 mb-8 max-w-3xl mx-auto">Real patients share their treatment journey: before → after → recovery. Short, candid and helpful for planning your trip.</p>
 
-    <!-- 4 Video Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform">
-        <iframe src="https://drive.google.com/file/d/1YbZO-yl02kIbIfBSNdE-roamL2WIwphL/preview" width="100%" height="315" allow="autoplay" class="w-full"></iframe>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
+          <div style="position:relative;padding-top:56.25%;">
+            <iframe class="video-frame" src="https://drive.google.com/file/d/1YbZO-yl02kIbIfBSNdE-roamL2WIwphL/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
+          <div style="position:relative;padding-top:56.25%;">
+            <iframe class="video-frame" src="https://drive.google.com/file/d/1TBEQYMwJUr9fqVAAHMCM9Gzr1ksv2mD6/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
+          <div style="position:relative;padding-top:56.25%;">
+            <iframe class="video-frame" src="https://drive.google.com/file/d/1BuyqFWjUxh6DujI6lyiyJC05DdLP9ehS/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden bg-[#23130f] border border-[#3a241d] card-glow">
+          <div style="position:relative;padding-top:56.25%;">
+            <iframe class="video-frame" src="https://drive.google.com/file/d/1Cn95ILutaG2dEFEmYp6Sm929B2nBUNtj/preview" allow="autoplay; encrypted-media" style="position:absolute;top:0;left:0"></iframe>
+          </div>
+        </div>
       </div>
-      <div class="rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform">
-        <iframe src="https://drive.google.com/file/d/1TBEQYMwJUr9fqVAAHMCM9Gzr1ksv2mD6/preview" width="100%" height="315" allow="autoplay" class="w-full"></iframe>
-      </div>
-      <div class="rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform">
-        <iframe src="https://drive.google.com/file/d/1BuyqFWjUxh6DujI6lyiyJC05DdLP9ehS/preview" width="100%" height="315" allow="autoplay" class="w-full"></iframe>
-      </div>
-      <div class="rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform">
-        <iframe src="https://drive.google.com/file/d/1Cn95ILutaG2dEFEmYp6Sm929B2nBUNtj/preview" width="100%" height="315" allow="autoplay" class="w-full"></iframe>
+
+      <div class="mt-8 text-gray-300">
+        <p>📧 <a href="mailto:patient@turkeymedicals.com" class="text-amber-300 hover:underline">patient@turkeymedicals.com</a> &nbsp; | &nbsp; 💬 <a href="https://wa.me/905071636297" class="text-amber-300 hover:underline">+90 507 163 6297</a></p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Articles List Section -->
-  <section id="articles" class="py-24 bg-gray-900 text-center">
+  <!-- ARTICLES (full list) -->
+  <section id="articles" class="py-24 bg-gradient-to-b from-[#140a08] via-[#2a1a16] to-[#0a0504] text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-yellow-400">Medical Tourism Articles & Insights</h2>
-      <p class="text-gray-300 mb-10 max-w-3xl mx-auto">
-        Explore our latest articles about treatments, destinations, and trends in Turkey’s booming medical tourism industry.
-      </p>
+      <h2 class="text-4xl font-bold mb-6 text-amber-300">🩺 Medical Tourism Articles & Insights</h2>
+      <p class="text-gray-300 mb-10 max-w-3xl mx-auto">Explore expert guides and patient resources covering treatments, clinics, reimbursement, and travel tips for Turkey medical tourism.</p>
 
       <div class="grid md:grid-cols-3 gap-6 text-left">
-      <!-- Start of Article Cards -->
-      <a href="https://turkeymedicals.com/inflammation" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Inflammation & Health Tourism</h3>
-        <p class="text-sm">Learn how inflammation impacts recovery and treatment planning in Turkey.</p>
-      </a>
+        <!-- Full article list (copied + restyled) -->
+        <a href="https://turkeymedicals.com/inflammation" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Inflammation & Health Tourism</h3>
+          <p class="text-sm text-gray-300">Learn how inflammation impacts recovery and treatment planning in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/a-record-is-expected-for-turkey-health-and-medical-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Record Growth for Turkey Medical Tourism</h3>
-        <p class="text-sm">Discover why Turkey expects record-breaking numbers in health tourism visitors.</p>
-      </a>
+        <a href="https://turkeymedicals.com/a-record-is-expected-for-turkey-health-and-medical-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Record Growth for Turkey Medical Tourism</h3>
+          <p class="text-sm text-gray-300">Discover why Turkey expects record-breaking numbers in health tourism visitors.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-tourism-2025" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey Tourism 2025</h3>
-        <p class="text-sm">A look at Turkey’s upcoming medical and cultural tourism developments for 2025.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-tourism-2025" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey Tourism 2025</h3>
+          <p class="text-sm text-gray-300">A look at Turkey’s upcoming medical and cultural tourism developments for 2025.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/ireland-hse-reimbursement-for-turkey" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Ireland HSE Reimbursement for Turkey</h3>
-        <p class="text-sm">Find out how Irish patients can get reimbursed for treatments in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/ireland-hse-reimbursement-for-turkey" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Ireland HSE Reimbursement for Turkey</h3>
+          <p class="text-sm text-gray-300">Find out how Irish patients can get reimbursed for treatments in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/health-tourists" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Who Are Health Tourists?</h3>
-        <p class="text-sm">Profiles of global travelers choosing Turkey for affordable medical care.</p>
-      </a>
+        <a href="https://turkeymedicals.com/health-tourists" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Who Are Health Tourists?</h3>
+          <p class="text-sm text-gray-300">Profiles of global travelers choosing Turkey for affordable medical care.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-top-5-in-health-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey Ranks Top 5 in Health Tourism</h3>
-        <p class="text-sm">Turkey joins the world’s leaders in health tourism — here’s why it matters.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-top-5-in-health-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey Ranks Top 5 in Health Tourism</h3>
+          <p class="text-sm text-gray-300">Turkey joins the world’s leaders in health tourism — here’s why it matters.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/hair-transplant-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Hair Transplant Tourism</h3>
-        <p class="text-sm">A deep dive into Turkey’s rise as a global hub for hair restoration.</p>
-      </a>
+        <a href="https://turkeymedicals.com/hair-transplant-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Hair Transplant Tourism</h3>
+          <p class="text-sm text-gray-300">A deep dive into Turkey’s rise as a global hub for hair restoration.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/bariatric-surgery" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Bariatric Surgery in Turkey</h3>
-        <p class="text-sm">Top clinics, patient success stories, and what makes Turkey stand out.</p>
-      </a>
+        <a href="https://turkeymedicals.com/bariatric-surgery" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Bariatric Surgery in Turkey</h3>
+          <p class="text-sm text-gray-300">Top clinics, patient success stories, and what makes Turkey stand out.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/dentist-health-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Dentist & Dental Tourism</h3>
-        <p class="text-sm">Everything you need to know about dental aesthetics and treatments in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/dentist-health-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Dentist & Dental Tourism</h3>
+          <p class="text-sm text-gray-300">Everything you need to know about dental aesthetics and treatments in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/teenagers-addiction" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Teenage Addiction Treatments</h3>
-        <p class="text-sm">How Turkey’s mental health facilities help teens overcome addiction.</p>
-      </a>
+        <a href="https://turkeymedicals.com/teenagers-addiction" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Teenage Addiction Treatments</h3>
+          <p class="text-sm text-gray-300">How Turkey’s mental health facilities help teens overcome addiction.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/unshaven-hair-transplant-turkey" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Unshaven Hair Transplant</h3>
-        <p class="text-sm">Explore Turkey’s latest trend — hair transplants without shaving your head.</p>
-      </a>
+        <a href="https://turkeymedicals.com/unshaven-hair-transplant-turkey" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Unshaven Hair Transplant</h3>
+          <p class="text-sm text-gray-300">Explore Turkey’s latest trend — hair transplants without shaving your head.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/eye-tourism-turkey" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Eye Tourism in Turkey</h3>
-        <p class="text-sm">Laser eye surgeries and smart lenses: Turkey’s vision correction industry.</p>
-      </a>
+        <a href="https://turkeymedicals.com/eye-tourism-turkey" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Eye Tourism in Turkey</h3>
+          <p class="text-sm text-gray-300">Laser eye surgeries and smart lenses: Turkey’s vision correction industry.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/tourists-coming-to-istanbul" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Tourists Coming to Istanbul</h3>
-        <p class="text-sm">A breakdown of why Istanbul remains a magnet for medical travelers.</p>
-      </a>
+        <a href="https://turkeymedicals.com/tourists-coming-to-istanbul" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Tourists Coming to Istanbul</h3>
+          <p class="text-sm text-gray-300">A breakdown of why Istanbul remains a magnet for medical travelers.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/orthopedics-and-traumatology-health-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Orthopedics & Traumatology</h3>
-        <p class="text-sm">Advanced orthopedic centers and trauma recovery programs in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/orthopedics-and-traumatology-health-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Orthopedics & Traumatology</h3>
+          <p class="text-sm text-gray-300">Advanced orthopedic centers and trauma recovery programs in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkish-health-tourism-2024" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkish Health Tourism 2024</h3>
-        <p class="text-sm">Annual overview of Turkey’s progress in medical tourism excellence.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkish-health-tourism-2024" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkish Health Tourism 2024</h3>
+          <p class="text-sm text-gray-300">Annual overview of Turkey’s progress in medical tourism excellence.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/tourists-coming-to-antalya" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Tourists Coming to Antalya</h3>
-        <p class="text-sm">Antalya’s rise as the top medical tourism and wellness destination.</p>
-      </a>
-      <a href="https://turkeymedicals.com/world-health-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">World Health Tourism</h3>
-        <p class="text-sm">Global trends and Turkey’s emerging leadership in world health travel.</p>
-      </a>
+        <a href="https://turkeymedicals.com/tourists-coming-to-antalya" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Tourists Coming to Antalya</h3>
+          <p class="text-sm text-gray-300">Antalya’s rise as the top medical tourism and wellness destination.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-tourism-revenue" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey Tourism Revenue</h3>
-        <p class="text-sm">Explore how medical tourism contributes billions to Turkey’s economy.</p>
-      </a>
+        <a href="https://turkeymedicals.com/world-health-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">World Health Tourism</h3>
+          <p class="text-sm text-gray-300">Global trends and Turkey’s emerging leadership in world health travel.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/teen-nose-job" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Teen Rhinoplasty in Turkey</h3>
-        <p class="text-sm">Specialized cosmetic surgery for teens with world-class safety standards.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-tourism-revenue" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey Tourism Revenue</h3>
+          <p class="text-sm text-gray-300">Explore how medical tourism contributes billions to Turkey’s economy.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/smile-design" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Smile Design</h3>
-        <p class="text-sm">Get your perfect smile with custom aesthetic dentistry in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/teen-nose-job" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Teen Rhinoplasty in Turkey</h3>
+          <p class="text-sm text-gray-300">Specialized cosmetic surgery for teens with world-class safety standards.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/cat-eye-aesthetics" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Cat Eye Aesthetics</h3>
-        <p class="text-sm">A trending eyelid lift aesthetic procedure gaining global popularity.</p>
-      </a>
+        <a href="https://turkeymedicals.com/smile-design" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Smile Design</h3>
+          <p class="text-sm text-gray-300">Get your perfect smile with custom aesthetic dentistry in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/teeth-health" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Teeth Health & Care</h3>
-        <p class="text-sm">Everything you should know about oral hygiene and dental care abroad.</p>
-      </a>
+        <a href="https://turkeymedicals.com/cat-eye-aesthetics" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Cat Eye Aesthetics</h3>
+          <p class="text-sm text-gray-300">A trending eyelid lift aesthetic procedure gaining global popularity.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/hymenoplasty" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Hymenoplasty Surgery</h3>
-        <p class="text-sm">Learn about this sensitive aesthetic procedure and its growing demand.</p>
-      </a>
+        <a href="https://turkeymedicals.com/teeth-health" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Teeth Health & Care</h3>
+          <p class="text-sm text-gray-300">Everything you should know about oral hygiene and dental care abroad.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/meniscus" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Meniscus Surgery</h3>
-        <p class="text-sm">Orthopedic advancements in Turkey’s sports injury treatments.</p>
-      </a>
+        <a href="https://turkeymedicals.com/hymenoplasty" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Hymenoplasty Surgery</h3>
+          <p class="text-sm text-gray-300">Learn about this sensitive aesthetic procedure and its growing demand.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/pelvic-diseases" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Pelvic Diseases</h3>
-        <p class="text-sm">Women’s health and gynecological treatments with Turkey’s experts.</p>
-      </a>
+        <a href="https://turkeymedicals.com/meniscus" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Meniscus Surgery</h3>
+          <p class="text-sm text-gray-300">Orthopedic advancements in Turkey’s sports injury treatments.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/neck-straightening" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Neck Straightening</h3>
-        <p class="text-sm">Discover orthopedic and posture correction surgeries in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/pelvic-diseases" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Pelvic Diseases</h3>
+          <p class="text-sm text-gray-300">Women’s health and gynecological treatments with Turkey’s experts.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/bruxism" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Bruxism Treatment</h3>
-        <p class="text-sm">Stop teeth grinding with advanced dental and sleep therapy solutions.</p>
-      </a>
+        <a href="https://turkeymedicals.com/neck-straightening" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Neck Straightening</h3>
+          <p class="text-sm text-gray-300">Discover orthopedic and posture correction surgeries in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/dimploplasty" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Dimple Creation Surgery</h3>
-        <p class="text-sm">Add natural dimples to your smile with safe, aesthetic procedures.</p>
-      </a>
+        <a href="https://turkeymedicals.com/bruxism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Bruxism Treatment</h3>
+          <p class="text-sm text-gray-300">Stop teeth grinding with advanced dental and sleep therapy solutions.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/inbreeding" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Inbreeding & Health Risks</h3>
-        <p class="text-sm">Learn about genetic health awareness in Turkey’s modern healthcare system.</p>
-      </a>
+        <a href="https://turkeymedicals.com/dimploplasty" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Dimple Creation Surgery</h3>
+          <p class="text-sm text-gray-300">Add natural dimples to your smile with safe, aesthetic procedures.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/alanya-dentist-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Alanya Dentist Tourism</h3>
-        <p class="text-sm">Alanya’s growing reputation for affordable and quality dental care.</p>
-      </a>
+        <a href="https://turkeymedicals.com/inbreeding" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Inbreeding & Health Risks</h3>
+          <p class="text-sm text-gray-300">Learn about genetic health awareness in Turkey’s modern healthcare system.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/top-thermals-europe" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Top Thermal Centers in Europe</h3>
-        <p class="text-sm">Turkey’s thermal spas ranked among the best for wellness and recovery.</p>
-      </a>
+        <a href="https://turkeymedicals.com/alanya-dentist-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Alanya Dentist Tourism</h3>
+          <p class="text-sm text-gray-300">Alanya’s growing reputation for affordable and quality dental care.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/obesity-surgery" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Obesity Surgery</h3>
-        <p class="text-sm">Gastric sleeve, bypass, and weight-loss procedures with top Turkish surgeons.</p>
-      </a>
+        <a href="https://turkeymedicals.com/top-thermals-europe" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Top Thermal Centers in Europe</h3>
+          <p class="text-sm text-gray-300">Turkey’s thermal spas ranked among the best for wellness and recovery.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/gas-formation-stomach" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Gas Formation & Digestion</h3>
-        <p class="text-sm">Understanding digestive health and dietary treatments in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/obesity-surgery" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Obesity Surgery</h3>
+          <p class="text-sm text-gray-300">Gastric sleeve, bypass, and weight-loss procedures with top Turkish surgeons.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-hair-aesthetic-economy" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey’s Hair Aesthetic Economy</h3>
-        <p class="text-sm">How hair transplants became a billion-dollar industry in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/gas-formation-stomach" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Gas Formation & Digestion</h3>
+          <p class="text-sm text-gray-300">Understanding digestive health and dietary treatments in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/beauty-center-campaigns" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Beauty Center Campaigns</h3>
-        <p class="text-sm">Exclusive promotions and packages for health tourists in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-hair-aesthetic-economy" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey’s Hair Aesthetic Economy</h3>
+          <p class="text-sm text-gray-300">How hair transplants became a billion-dollar industry in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-hair-implantation-economy" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Hair Implantation & Economy</h3>
-        <p class="text-sm">Hair transplantation’s role in boosting Turkey’s medical export sector.</p>
-      </a>
+        <a href="https://turkeymedicals.com/beauty-center-campaigns" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Beauty Center Campaigns</h3>
+          <p class="text-sm text-gray-300">Exclusive promotions and packages for health tourists in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/europeans-arabs-hair-plants-turkey" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Europeans & Arabs Choosing Turkey</h3>
-        <p class="text-sm">Why global patients prefer Turkey for hair restoration procedures.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-hair-implantation-economy" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Hair Implantation & Economy</h3>
+          <p class="text-sm text-gray-300">Hair transplantation’s role in boosting Turkey’s medical export sector.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/marrow-transplantation-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Marrow Transplantation Tourism</h3>
-        <p class="text-sm">Turkey’s medical advancements in bone marrow and organ transplant care.</p>
-      </a>
+        <a href="https://turkeymedicals.com/europeans-arabs-hair-plants-turkey" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Europeans & Arabs Choosing Turkey</h3>
+          <p class="text-sm text-gray-300">Why global patients prefer Turkey for hair restoration procedures.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-medical-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey Medical Tourism Overview</h3>
-        <p class="text-sm">Complete guide to traveling and receiving medical care in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/marrow-transplantation-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Marrow Transplantation Tourism</h3>
+          <p class="text-sm text-gray-300">Turkey’s medical advancements in bone marrow and organ transplant care.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/duodenal-switch-surgery" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Duodenal Switch Surgery</h3>
-        <p class="text-sm">Advanced bariatric surgery options with expert Turkish surgeons.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-medical-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey Medical Tourism Overview</h3>
+          <p class="text-sm text-gray-300">Complete guide to traveling and receiving medical care in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/star-in-health-tourism-began" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey’s Rise in Health Tourism</h3>
-        <p class="text-sm">The history and evolution of Turkey’s medical tourism excellence.</p>
-      </a>
+        <a href="https://turkeymedicals.com/duodenal-switch-surgery" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Duodenal Switch Surgery</h3>
+          <p class="text-sm text-gray-300">Advanced bariatric surgery options with expert Turkish surgeons.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/health-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Health Tourism Explained</h3>
-        <p class="text-sm">An overview of health and wellness tourism opportunities in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/star-in-health-tourism-began" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey’s Rise in Health Tourism</h3>
+          <p class="text-sm text-gray-300">The history and evolution of Turkey’s medical tourism excellence.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/health-tourism-turkey-laser-surgeon" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Laser Surgery in Turkey</h3>
-        <p class="text-sm">Modern laser and cosmetic surgeries leading Turkey’s medical tourism.</p>
-      </a>
+        <a href="https://turkeymedicals.com/health-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Health Tourism Explained</h3>
+          <p class="text-sm text-gray-300">An overview of health and wellness tourism opportunities in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/health-tourism-centers" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Health Tourism Centers</h3>
-        <p class="text-sm">The most trusted hospitals and treatment centers in Turkey.</p>
-      </a>
+        <a href="https://turkeymedicals.com/health-tourism-turkey-laser-surgeon" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Laser Surgery in Turkey</h3>
+          <p class="text-sm text-gray-300">Modern laser and cosmetic surgeries leading Turkey’s medical tourism.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/smart-lenses" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Smart Lenses</h3>
-        <p class="text-sm">Cutting-edge lens technology that improves vision and lifestyle.</p>
-      </a>
+        <a href="https://turkeymedicals.com/health-tourism-centers" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Health Tourism Centers</h3>
+          <p class="text-sm text-gray-300">The most trusted hospitals and treatment centers in Turkey.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/edema-aesthetics-antalya" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Edema Aesthetics Antalya</h3>
-        <p class="text-sm">Popular anti-swelling and rejuvenation treatments on Turkey’s coast.</p>
-      </a>
+        <a href="https://turkeymedicals.com/smart-lenses" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Smart Lenses</h3>
+          <p class="text-sm text-gray-300">Cutting-edge lens technology that improves vision and lifestyle.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/hair-transplant-turkey" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Hair Transplant in Turkey</h3>
-        <p class="text-sm">Istanbul’s world-renowned clinics for natural hair restoration.</p>
-      </a>
+        <a href="https://turkeymedicals.com/edema-aesthetics-antalya" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Edema Aesthetics Antalya</h3>
+          <p class="text-sm text-gray-300">Popular anti-swelling and rejuvenation treatments on Turkey’s coast.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-thermal-tourism-is-first-in-europe" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Thermal Tourism in Europe</h3>
-        <p class="text-sm">Turkey leads Europe with its therapeutic hot springs and resorts.</p>
-      </a>
+        <a href="https://turkeymedicals.com/hair-transplant-turkey" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Hair Transplant in Turkey</h3>
+          <p class="text-sm text-gray-300">Istanbul’s world-renowned clinics for natural hair restoration.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkish-health-tourism-2021-2022" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Health Tourism 2021–2022</h3>
-        <p class="text-sm">A look back at the growth years of Turkish medical travel.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-thermal-tourism-is-first-in-europe" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Thermal Tourism in Europe</h3>
+          <p class="text-sm text-gray-300">Turkey leads Europe with its therapeutic hot springs and resorts.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-health-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey Health Tourism</h3>
-        <p class="text-sm">Discover the services and value that make Turkey the #1 choice.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkish-health-tourism-2021-2022" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Health Tourism 2021–2022</h3>
+          <p class="text-sm text-gray-300">A look back at the growth years of Turkish medical travel.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/turkey-health-tourists" class="p-6 bg-gray-800 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Turkey’s Health Tourists</h3>
-        <p class="text-sm">Who visits Turkey for treatment — demographics and insights.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-health-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey Health Tourism</h3>
+          <p class="text-sm text-gray-300">Discover the services and value that make Turkey the #1 choice.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/why-health-tourism" class="p-6 bg-gray-800 rounded-2xl hover:bg-pink-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Why Choose Health Tourism</h3>
-        <p class="text-sm">Top reasons why Turkey is the go-to destination for affordable care.</p>
-      </a>
+        <a href="https://turkeymedicals.com/turkey-health-tourists" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Turkey’s Health Tourists</h3>
+          <p class="text-sm text-gray-300">Who visits Turkey for treatment — demographics and insights.</p>
+        </a>
 
-      <a href="https://turkeymedicals.com/inflammation" class="p-6 bg-gray-800 rounded-2xl hover:bg-blue-500 hover:text-gray-900 transition">
-        <h3 class="font-semibold text-xl mb-2">Inflammation & Health Tourism</h3>
-        <p class="text-sm">The connection between inflammation and international treatment travel.</p>
-      </a>
+        <a href="https://turkeymedicals.com/why-health-tourism" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Why Choose Health Tourism</h3>
+          <p class="text-sm text-gray-300">Top reasons why Turkey is the go-to destination for affordable care.</p>
+        </a>
+
+        <a href="https://turkeymedicals.com/inflammation" class="p-6 bg-[#221712] rounded-2xl border border-[#3f2b24] hover:border-amber-400 transition card-glow">
+          <h3 class="font-semibold text-xl mb-2 text-amber-200">Inflammation & Health Tourism (again)</h3>
+          <p class="text-sm text-gray-300">The connection between inflammation and international treatment travel.</p>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-24 bg-gray-950 text-center">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-yellow-400">What Our Patients Say</h2>
+  <!-- TESTIMONIALS -->
+  <section class="py-20 bg-[#0b0604]">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8 text-amber-300">What Our Patients Say</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-yellow-400/30 transition">
-          <p class="text-gray-300 mb-4 italic">“My dental implant experience in Antalya was flawless. The clinic was spotless, and I saved 70% compared to home.”</p>
-          <span class="font-semibold text-yellow-300">— Sarah M., UK</span>
+        <div class="p-8 rounded-2xl bg-[#241613] border border-[#3b2520] card-glow">
+          <p class="text-gray-300 italic mb-4">“My dental implant in Antalya was flawless. Clinic staff were incredibly supportive and professional.”</p>
+          <span class="font-semibold text-amber-200">— Sarah M., UK</span>
         </div>
-        <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-pink-400/30 transition">
-          <p class="text-gray-300 mb-4 italic">“Istanbul’s hair transplant clinics are on another level. Great service, great results!”</p>
-          <span class="font-semibold text-pink-300">— Ahmed K., UAE</span>
+        <div class="p-8 rounded-2xl bg-[#241613] border border-[#3b2520] card-glow">
+          <p class="text-gray-300 italic mb-4">“Hair transplant results exceeded expectations — natural and painless recovery.”</p>
+          <span class="font-semibold text-amber-200">— Ahmed K., UAE</span>
         </div>
-        <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-blue-400/30 transition">
-          <p class="text-gray-300 mb-4 italic">“I traveled for bariatric surgery — from consultation to recovery, everything was professional and caring.”</p>
-          <span class="font-semibold text-blue-300">— Laura G., Ireland</span>
+        <div class="p-8 rounded-2xl bg-[#241613] border border-[#3b2520] card-glow">
+          <p class="text-gray-300 italic mb-4">“Full-service care from consultation to recovery — highly recommended.”</p>
+          <span class="font-semibold text-amber-200">— Laura G., Ireland</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section with Email & WhatsApp -->
-  <section id="contact" class="gradient-bg py-24 text-center">
-    <div class="container mx-auto px-6 text-gray-900">
-      <h2 class="text-4xl font-bold mb-6">Start Your Medical Journey to Turkey ✈️💖</h2>
-      <p class="text-lg mb-4 max-w-2xl mx-auto">
-        Contact our healthcare tourism advisors to plan your treatment, hospital stay, and travel package today.
-      </p>
-      <p class="text-lg mb-8 max-w-2xl mx-auto">
-        📧 Email: <a href="mailto:patient@turkeymedicals.com" class="text-yellow-400 hover:underline">patient@turkeymedicals.com</a> | 
-        💬 WhatsApp: <a href="https://wa.me/905071636297" class="text-green-400 hover:underline">+90 507 163-6297</a>
-      </p>
-      <a href="https://turkeymedicals.com/contact" class="bg-gray-900 text-yellow-300 px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 hover:text-gray-900 transition duration-300">Book Free Consultation</a>
+  <!-- CTA / CONSULTATION -->
+  <section id="consultation" class="py-20 bg-gradient-to-b from-[#110806] via-[#2b1a16] to-[#0b0604] text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4 text-amber-300">Start Your Medical Journey to Turkey ✈️💖</h2>
+      <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Contact our healthcare advisors to plan your treatment, hospital stay and travel package. We handle bookings, hospital coordination, and recovery arrangements.</p>
+
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <a href="mailto:patient@turkeymedicals.com" class="bg-amber-400 text-black px-6 py-3 rounded-lg font-semibold hover:opacity-95 transition">Email Us</a>
+        <a href="https://wa.me/905071636297" class="bg-transparent border border-amber-500 text-amber-200 px-6 py-3 rounded-lg hover:bg-amber-500/10 transition">Chat on WhatsApp</a>
+      </div>
+
+      <p class="mt-6 text-gray-400 text-sm">Or call: <span class="text-amber-300 font-semibold">+90 507 163 6297</span></p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-950 py-10 text-center text-gray-400">
-    <p>© 2025 <span class="text-yellow-400 font-semibold">TurkeyMedicals</span>. All Rights Reserved.</p>
-    <p class="mt-2">Made with ❤️ in Istanbul | <a href="https://turkeymedicals.com" class="text-yellow-400 hover:underline">Learn More</a></p>
+  <!-- FOOTER -->
+  <footer class="bg-[#060302] py-8">
+    <div class="container mx-auto px-6 text-center text-gray-400">
+      <p class="text-sm">© <span class="text-amber-300 font-semibold">TurkeyMedicals</span> 2025. All Rights Reserved.</p>
+      <p class="mt-2 text-xs">Made with ❤️ in Istanbul • <a href="https://turkeymedicals.com/health-tourism" class="text-amber-300 hover:underline">Learn more</a></p>
+    </div>
   </footer>
 
 </body>
